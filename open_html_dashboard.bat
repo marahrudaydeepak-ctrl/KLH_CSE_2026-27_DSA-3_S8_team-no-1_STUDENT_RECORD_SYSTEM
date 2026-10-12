@@ -1,0 +1,3 @@
+@echo off
+echo Opening Interactive HTML Analytics Dashboard in your default web browser...
+start "" "%~dp0dashboard.html"

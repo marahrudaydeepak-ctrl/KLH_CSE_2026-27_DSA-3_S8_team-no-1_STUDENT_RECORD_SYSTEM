@@ -1,0 +1,27 @@
+====================================================================================================
+                            APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                          
+                               AUTONOMOUS ACADEMIC EXAMINATION BOARD                               
+                                   SEMESTER GRADE REPORT / MARKSHEET                               
+====================================================================================================
+ Student Name : Tejas Reddy                    | Roll Number : 2520080001      | Section: A
+ Student ID   : 2520080001                     | Course/Prog : B.Tech          | Year: 3 | Sem: 5
+ Department   : CSE                            | Date Issued : 12-Oct-2026     | Status: PASSED - FIRST CLASS WITH DISTINCTION
+----------------------------------------------------------------------------------------------------
+ CODE     | COURSE / SUBJECT TITLE           | CRD  | INT   | EXT   | TOT   | GRD   | GP   | CR-PTS | RES 
+----------------------------------------------------------------------------------------------------
+ CS301    | Design & Analysis of Algorithms  |   4  |  27.0 |  63.0 |  90.0 |  O    |  10  |   40.0 | PASS
+ CS302    | Database Management Systems      |   4  |  26.0 |  60.6 |  86.6 |  A+   |   9  |   36.0 | PASS
+ CS303    | Operating Systems Architecture   |   4  |  26.7 |  62.3 |  89.0 |  A+   |   9  |   36.0 | PASS
+ CS304    | Computer Communication Networks  |   3  |  25.8 |  60.2 |  86.0 |  A+   |   9  |   27.0 | PASS
+ CS305    | Theory of Formal Languages & Aut |   3  |  25.5 |  59.5 |  85.0 |  A+   |   9  |   27.0 | PASS
+ CS306    | Full-Stack Web Engineering Lab   |   2  |  27.6 |  64.4 |  92.0 |  O    |  10  |   20.0 | PASS
+----------------------------------------------------------------------------------------------------
+ TOTAL REGISTERED CREDITS : 20   | CREDITS EARNED : 20   | TOTAL CREDIT POINTS : 186.0 
+ SEMESTER SGPA            : 9.30 | CUMULATIVE CGPA: 9.15 | FINAL GRADE        : A+  
+ OVERALL SEMESTER RESULT  : PASSED - FIRST CLASS WITH DISTINCTION
+====================================================================================================
+ GRADING SCALE: O (90-100)=10 | A+ (80-89)=9 | A (70-79)=8 | B+ (60-69)=7 | B (55-59)=6 | C (50-54)=5 | P (40-49)=4 | F (<40)=0
+ Minimum Passing Criteria: 40% in each subject & SGPA >= 4.00. This is a computer-verified grade report.
+
+        [Verified by: Faculty Advisor]            [Controller of Examinations]            [Dean - Academics]
+====================================================================================================

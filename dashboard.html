@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligent Student Record Management & Advanced Algorithm System</title>
+  <!-- Tailwind CSS via allowlisted CDN -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
+
+  <!-- ================= TOP HEADER ================= -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+          SR
+        </div>
+        <div>
+          <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">
+            Intelligent Student Record Management System
+          </h1>
+          <p class="text-xs text-slate-500">
+            Advanced Data Structures, Algorithmic Engine &amp; Academic Records Suite • Java DSA Master Project
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          32 Records Synchronized
+        </span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">
+          35+ Algorithms Active
+        </span>
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700 border border-purple-200">
+          Records &amp; Certs Ready
+        </span>
+        <button onclick="window.print()" class="px-3 py-1 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+          🖨 Print / PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Navigation Bar -->
+    <div class="bg-slate-50/80 border-t border-slate-200 px-4 sm:px-6 lg:px-8 py-1.5 overflow-x-auto">
+      <div class="max-w-7xl mx-auto flex items-center gap-2 text-xs">
+        <span class="text-slate-400 font-semibold uppercase text-[10px] tracking-wider mr-1">Jump to:</span>
+        <a href="#kpi-section" class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 font-medium transition">📊 Executive KPIs</a>
+        <a href="#charts-section" class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 font-medium transition">📈 Visual Charts</a>
+        <a href="#separate-analytics-section" class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 font-medium transition">🎓 Separate CGPA &amp; Attendance</a>
+        <a href="#records-section" class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-blue-700 font-semibold border-blue-300 bg-blue-50/50 hover:bg-blue-100 transition">📜 Records &amp; Certificates Center</a>
+        <a href="#omni-section" class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 font-medium transition">⚡ Omni-Search</a>
+        <a href="#directory-section" class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 font-medium transition">📋 Student Directory</a>
+        <a href="#complexity-section" class="px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 font-medium transition">ℹ Complexity Table</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <!-- ================= 1. EXECUTIVE KPI CARDS (8 CARDS) ================= -->
+    <div id="kpi-section" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Total Enrolled</div>
+        <div class="text-2xl font-bold text-blue-600 mt-1" id="kpi-total">32</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">Linked Lists &amp; Tree</div>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Average CGPA</div>
+        <div class="text-2xl font-bold text-emerald-600 mt-1" id="kpi-cgpa">7.70</div>
+        <div class="text-[10px] text-emerald-600 font-medium mt-0.5">Healthy Academic Band</div>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Dean's Honors</div>
+        <div class="text-2xl font-bold text-teal-600 mt-1" id="kpi-honors">12</div>
+        <div class="text-[10px] text-teal-600 font-medium mt-0.5">CGPA &ge; 8.50 (37.5%)</div>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Valedictorian</div>
+        <div class="text-base font-bold text-amber-600 truncate mt-1.5" id="kpi-valedictorian" title="Manish Patel">Manish P.</div>
+        <div class="text-[10px] text-amber-600 font-medium mt-0.5">CGPA 9.70 • 97.7%</div>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Avg Attendance</div>
+        <div class="text-2xl font-bold text-purple-600 mt-1" id="kpi-attd">82.2%</div>
+        <div class="text-[10px] text-purple-500 font-medium mt-0.5">180 Periods Conducted</div>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Exam Eligible</div>
+        <div class="text-2xl font-bold text-emerald-600 mt-1" id="kpi-eligible">23</div>
+        <div class="text-[10px] text-emerald-600 font-medium mt-0.5">&ge; 75% Statutory Pass</div>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Attd Shortage</div>
+        <div class="text-2xl font-bold text-rose-600 mt-1" id="kpi-shortage">9</div>
+        <div class="text-[10px] text-rose-500 font-medium mt-0.5">7 Zone / 2 Detained</div>
+      </div>
+      <div class="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+        <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Fee Cleared</div>
+        <div class="text-2xl font-bold text-slate-700 mt-1" id="kpi-fee-cleared">20</div>
+        <div class="text-[10px] text-slate-400 mt-0.5">No-Dues Clearance Issued</div>
+      </div>
+    </div>
+
+    <!-- ================= 2. VISUAL CHARTS ROW (3 CHARTS) ================= -->
+    <div id="charts-section" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- Chart 1: CGPA Histogram -->
+      <div class="bg-white p-4.5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h2 class="text-sm font-bold text-slate-900">Academic CGPA Distribution</h2>
+              <p class="text-xs text-slate-500">Distribution across 5 academic standing tiers</p>
+            </div>
+            <span class="text-[11px] bg-slate-100 text-slate-600 font-mono px-2 py-0.5 rounded">N = 32</span>
+          </div>
+          <div class="h-48 relative flex items-end justify-between gap-2 pt-4 pb-2 px-1" id="cgpa-histogram">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+        <div class="text-[11px] text-slate-400 text-center border-t border-slate-100 pt-2 mt-2">
+          UGC/AICTE 10-Point Cumulative Grading Scale System
+        </div>
+      </div>
+
+      <!-- Chart 2: Attendance Statutory Compliance Meter -->
+      <div class="bg-white p-4.5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h2 class="text-sm font-bold text-slate-900">Attendance &amp; Exam Eligibility</h2>
+              <p class="text-xs text-slate-500">Statutory regulatory audit (180 periods standard)</p>
+            </div>
+            <span class="text-[11px] bg-indigo-50 text-indigo-700 font-mono px-2 py-0.5 rounded">&ge;75% Cutoff</span>
+          </div>
+          <div class="h-48 relative flex items-end justify-between gap-2 pt-4 pb-2 px-1" id="attd-meter">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+        <div class="text-[11px] text-slate-400 text-center border-t border-slate-100 pt-2 mt-2">
+          Statutory Examination Regulatory Hall Ticket Clearance
+        </div>
+      </div>
+
+      <!-- Chart 3: Department Distribution -->
+      <div class="bg-white p-4.5 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h2 class="text-sm font-bold text-slate-900">Department Enrollment</h2>
+              <p class="text-xs text-slate-500">Student count distribution across disciplines</p>
+            </div>
+            <span class="text-[11px] bg-blue-50 text-blue-700 font-mono px-2 py-0.5 rounded">7 Branches</span>
+          </div>
+          <div class="space-y-2.5 pt-1" id="dept-bars">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+        <div class="text-[11px] text-slate-400 text-center border-t border-slate-100 pt-2 mt-2">
+          Synchronized across Hash Bucket Tables &amp; Trie Roots
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 3. DEDICATED SEPARATE CGPA & ATTENDANCE PERFORMANCE HUB ================= -->
+    <div id="separate-analytics-section" class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+      <div class="border-b border-slate-200 bg-slate-50 px-5 py-3.5 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-indigo-100 text-indigo-800 border border-indigo-200 mb-1">
+            🎓 Academic Standing &amp; Statutory Audit Hub
+          </span>
+          <h2 class="text-base font-bold text-slate-900">Dedicated Separate CGPA &amp; Attendance Analytics</h2>
+          <p class="text-xs text-slate-500">Inspect individual student academic standing, class rank, and attendance recovery targets separately</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="toggleSeparateView('cgpa')" id="tab-btn-cgpa" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow-xs transition">
+            🎓 Separate CGPA Standings
+          </button>
+          <button onclick="toggleSeparateView('attd')" id="tab-btn-attd" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition">
+            📅 Separate Attendance Register
+          </button>
+        </div>
+      </div>
+
+      <!-- CGPA View Container -->
+      <div id="separate-cgpa-container" class="p-5 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <span class="font-semibold text-slate-600">Filters:</span>
+            <select id="cgpa-dept-filter" onchange="renderCgpaTable()" class="px-2.5 py-1 rounded bg-white border border-slate-300 text-xs">
+              <option value="ALL">All Departments</option>
+              <option value="CSE">CSE</option>
+              <option value="ECE">ECE</option>
+              <option value="IT">IT</option>
+              <option value="AIML">AIML</option>
+              <option value="DS">DS</option>
+              <option value="MECH">MECH</option>
+              <option value="CIVIL">CIVIL</option>
+            </select>
+            <select id="cgpa-tier-filter" onchange="renderCgpaTable()" class="px-2.5 py-1 rounded bg-white border border-slate-300 text-xs">
+              <option value="ALL">All Standing Tiers</option>
+              <option value="HONORS">Dean's Honors (CGPA &ge; 8.50)</option>
+              <option value="FIRST">First Class (CGPA 6.50 - 8.49)</option>
+              <option value="SECOND">Second Class (CGPA 5.00 - 6.49)</option>
+              <option value="RISK">At-Risk / Remedial (CGPA &lt; 5.00)</option>
+            </select>
+          </div>
+          <div class="text-xs text-slate-500 font-mono" id="cgpa-count-banner">
+            Showing 32 students • Ranked by CGPA descending
+          </div>
+        </div>
+
+        <div class="overflow-x-auto border border-slate-200 rounded-lg">
+          <table class="w-full text-left text-xs divide-y divide-slate-200">
+            <thead class="bg-slate-100 font-semibold text-slate-700">
+              <tr>
+                <th class="p-2.5">Dept Rank</th>
+                <th class="p-2.5">Roll No</th>
+                <th class="p-2.5">Student Name</th>
+                <th class="p-2.5">Dept</th>
+                <th class="p-2.5">Year/Sem</th>
+                <th class="p-2.5">Marks %</th>
+                <th class="p-2.5">CGPA</th>
+                <th class="p-2.5">Letter Grade</th>
+                <th class="p-2.5">Academic Standing Tier</th>
+                <th class="p-2.5 text-right">Quick Action</th>
+              </tr>
+            </thead>
+            <tbody id="cgpa-tbody" class="divide-y divide-slate-100 bg-white">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Attendance View Container -->
+      <div id="separate-attd-container" class="p-5 space-y-4 hidden">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <span class="font-semibold text-slate-600">Filters:</span>
+            <select id="attd-dept-filter" onchange="renderAttdTable()" class="px-2.5 py-1 rounded bg-white border border-slate-300 text-xs">
+              <option value="ALL">All Departments</option>
+              <option value="CSE">CSE</option>
+              <option value="ECE">ECE</option>
+              <option value="IT">IT</option>
+              <option value="AIML">AIML</option>
+              <option value="DS">DS</option>
+              <option value="MECH">MECH</option>
+              <option value="CIVIL">CIVIL</option>
+            </select>
+            <select id="attd-status-filter" onchange="renderAttdTable()" class="px-2.5 py-1 rounded bg-white border border-slate-300 text-xs">
+              <option value="ALL">All Statutory Statuses</option>
+              <option value="ELIGIBLE">Exam Eligible (&ge; 75%)</option>
+              <option value="CONDONATION">Condonation Zone (65 - 74.9%)</option>
+              <option value="DETAINED">Critical Detained (&lt; 65%)</option>
+              <option value="DEFICIT">All Defaulters (&lt; 75%)</option>
+            </select>
+          </div>
+          <div class="text-xs text-slate-500 font-mono" id="attd-count-banner">
+            Showing 32 students • Sorted by attendance percentage ascending
+          </div>
+        </div>
+
+        <div class="overflow-x-auto border border-slate-200 rounded-lg">
+          <table class="w-full text-left text-xs divide-y divide-slate-200">
+            <thead class="bg-slate-100 font-semibold text-slate-700">
+              <tr>
+                <th class="p-2.5">Roll No</th>
+                <th class="p-2.5">Student Name</th>
+                <th class="p-2.5">Dept</th>
+                <th class="p-2.5">Attended / Held</th>
+                <th class="p-2.5">Missed</th>
+                <th class="p-2.5">Attendance %</th>
+                <th class="p-2.5">Exam Eligibility Status</th>
+                <th class="p-2.5">Deficit Recovery Target</th>
+                <th class="p-2.5 text-right">Quick Action</th>
+              </tr>
+            </thead>
+            <tbody id="attd-tbody" class="divide-y divide-slate-100 bg-white">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 4. STUDENT RECORDS, CERTIFICATES & PRINTING CENTER ================= -->
+    <div id="records-section" class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+      <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-950 p-5 text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 mb-1.5">
+            📜 Official Document Generation Suite
+          </div>
+          <h2 class="text-base sm:text-lg font-bold">Institutional Records, Marksheets &amp; Certificate Printing Center</h2>
+          <p class="text-xs text-indigo-200">
+            Generate authentic semester marksheets, 8 categories of official certificates with SHA-256 verification hashes, student ID cards, and fee payment receipts.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="copyDocumentToClipboard()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-semibold text-white transition">
+            📋 Copy Text
+          </button>
+          <button onclick="downloadDocumentText()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-semibold text-white transition">
+            💾 Save .txt
+          </button>
+          <button onclick="printCurrentDocument()" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-xs font-semibold text-white transition shadow-sm">
+            🖨 Print Document
+          </button>
+        </div>
+      </div>
+
+      <div class="p-5 grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <!-- Controls Column -->
+        <div class="lg:col-span-4 space-y-4">
+          <!-- Student Selector -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+            <label class="block text-xs font-bold uppercase text-slate-600 tracking-wider">
+              1. Select Student
+            </label>
+            <select id="doc-student-select" onchange="handleStudentSelectChange()" class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-xs font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none">
+              <!-- Populated via JS -->
+            </select>
+            <div id="doc-student-meta" class="text-[11px] text-slate-500 font-mono bg-white p-2.5 rounded border border-slate-200">
+              Select a student above to inspect credentials.
+            </div>
+          </div>
+
+          <!-- Document Action Buttons -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+            <label class="block text-xs font-bold uppercase text-slate-600 tracking-wider">
+              2. Choose Academic Document
+            </label>
+            <div class="space-y-1.5 text-xs">
+              <button onclick="generateDoc('marksheet')" class="w-full text-left px-3 py-2 rounded-lg font-medium bg-white hover:bg-blue-50 hover:text-blue-700 border border-slate-200 transition flex items-center justify-between">
+                <span>📄 Grade Card / Marksheet</span>
+                <span class="text-[10px] text-slate-400">SGPA &amp; Credits</span>
+              </button>
+              <button onclick="generateDoc('cgpa_card')" class="w-full text-left px-3 py-2 rounded-lg font-medium bg-white hover:bg-blue-50 hover:text-blue-700 border border-slate-200 transition flex items-center justify-between">
+                <span>🎓 Separate CGPA Scorecard</span>
+                <span class="text-[10px] text-slate-400">Rank &amp; History</span>
+              </button>
+              <button onclick="generateDoc('attd_card')" class="w-full text-left px-3 py-2 rounded-lg font-medium bg-white hover:bg-blue-50 hover:text-blue-700 border border-slate-200 transition flex items-center justify-between">
+                <span>📅 Separate Attendance Card</span>
+                <span class="text-[10px] text-slate-400">Exam Eligibility</span>
+              </button>
+              <button onclick="generateDoc('id_card')" class="w-full text-left px-3 py-2 rounded-lg font-medium bg-white hover:bg-blue-50 hover:text-blue-700 border border-slate-200 transition flex items-center justify-between">
+                <span>💳 Official Student ID Card</span>
+                <span class="text-[10px] text-slate-400">Barcode &amp; Photo</span>
+              </button>
+              <button onclick="generateDoc('fee_receipt')" class="w-full text-left px-3 py-2 rounded-lg font-medium bg-white hover:bg-blue-50 hover:text-blue-700 border border-slate-200 transition flex items-center justify-between">
+                <span>💰 Fee Payment Receipt</span>
+                <span class="text-[10px] text-slate-400">Breakdown &amp; Dues</span>
+              </button>
+              <button onclick="generateDoc('no_dues')" class="w-full text-left px-3 py-2 rounded-lg font-medium bg-white hover:bg-blue-50 hover:text-blue-700 border border-slate-200 transition flex items-center justify-between">
+                <span>✅ Financial No-Dues Clearance</span>
+                <span class="text-[10px] text-slate-400">Accounts Audit</span>
+              </button>
+              <button onclick="generateDoc('attd_notice')" class="w-full text-left px-3 py-2 rounded-lg font-medium bg-white hover:bg-rose-50 hover:text-rose-700 border border-slate-200 transition flex items-center justify-between">
+                <span>⚠ Attendance Shortage Memo</span>
+                <span class="text-[10px] text-rose-500">Deficit Advisory</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Official Certificate Generator -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2.5">
+            <label class="block text-xs font-bold uppercase text-slate-600 tracking-wider">
+              3. Issue Institutional Certificate
+            </label>
+            <select id="cert-type-select" class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-xs font-medium focus:outline-none">
+              <option value="BONAFIDE">Bonafide Student Certificate</option>
+              <option value="MERIT">Certificate of Academic Merit</option>
+              <option value="COMPLETION">Course Completion Certificate</option>
+              <option value="CHARACTER">Character &amp; Conduct Certificate</option>
+              <option value="TRANSCRIPT">Official Academic Transcript</option>
+              <option value="TRANSFER">Transfer &amp; Leaving Certificate (TC)</option>
+              <option value="NOC">Internship No Objection Certificate (NOC)</option>
+            </select>
+            <input type="text" id="cert-purpose-input" placeholder="Purpose (e.g. Passport, Visa, Internship)..." value="General Academic & Administrative Verification"
+                   class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-xs font-medium focus:outline-none">
+            <button onclick="generateDoc('certificate')" class="w-full px-3 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 font-semibold text-white text-xs transition">
+              📜 Issue Certificate with SHA-256 Hash
+            </button>
+          </div>
+        </div>
+
+        <!-- Document Preview Canvas Column -->
+        <div class="lg:col-span-8 flex flex-col">
+          <div class="flex items-center justify-between bg-slate-100 border border-slate-200 px-4 py-2.5 rounded-t-xl text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <span class="font-bold text-slate-800" id="doc-preview-title">Official Semester Grade Card &amp; Marksheet</span>
+            </div>
+            <span class="font-mono text-[11px] text-slate-500" id="doc-preview-badge">Ref: DOC-2026-LIVE</span>
+          </div>
+          <div class="bg-white border-x border-b border-slate-200 rounded-b-xl p-4 flex-1 shadow-inner overflow-hidden">
+            <pre id="doc-preview-canvas" class="font-mono text-[11px] leading-relaxed text-slate-800 bg-slate-50 p-4 rounded-lg border border-slate-200 overflow-x-auto whitespace-pre select-all h-[520px]">
+Select a student and choose a document on the left to render the official formatted layout.
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 5. MULTI-ALGORITHM OMNI-SEARCH HUB ================= -->
+    <div id="omni-section" class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+      <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 p-5 text-white">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-blue-500/30 text-blue-200 border border-blue-400/30 mb-1.5">
+              ⚡ Multi-Algorithm Search Engine
+            </div>
+            <h2 class="text-lg font-bold">Intelligent Multi-Algorithm Omni-Search Playground</h2>
+            <p class="text-xs text-blue-200">
+              Executes Linear, Binary, Hash Table, BST, AVL Tree, Trie, KMP, Rabin-Karp, Boyer-Moore, and Levenshtein simultaneously.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 text-xs">
+            <span class="text-slate-300">Quick Presets:</span>
+            <button onclick="setQuery('Aarav')" class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white font-mono transition">Aarav</button>
+            <button onclick="setQuery('pythn')" class="px-2.5 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 font-mono transition" title="1-letter Typo">pythn (Typo!)</button>
+            <button onclick="setQuery('2520080001')" class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white font-mono transition">2520080001</button>
+            <button onclick="setQuery('Java')" class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white font-mono transition">Java</button>
+          </div>
+        </div>
+
+        <div class="mt-4 flex flex-col sm:flex-row gap-2.5">
+          <div class="relative flex-1">
+            <input type="text" id="omni-input" placeholder="Type student name, 10-digit ID, skill, or typo (e.g. 'pythn', 'Sneha', '2520080004')..."
+                   class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 font-mono text-sm">
+            <div class="absolute left-3.5 top-3 text-slate-400">🔍</div>
+          </div>
+          <select id="omni-dept" class="px-3 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white text-xs font-semibold focus:outline-none">
+            <option value="ALL" class="text-slate-900">All Departments</option>
+            <option value="CSE" class="text-slate-900">CSE</option>
+            <option value="ECE" class="text-slate-900">ECE</option>
+            <option value="IT" class="text-slate-900">IT</option>
+            <option value="AIML" class="text-slate-900">AIML</option>
+            <option value="DS" class="text-slate-900">DS</option>
+            <option value="MECH" class="text-slate-900">MECH</option>
+            <option value="CIVIL" class="text-slate-900">CIVIL</option>
+          </select>
+          <button onclick="runOmniSearch()" class="px-5 py-2.5 rounded-lg bg-blue-500 hover:bg-blue-600 font-semibold text-white text-xs transition shadow-sm">
+            Execute All 10 Algos
+          </button>
+        </div>
+      </div>
+
+      <!-- Execution Stats Banner -->
+      <div id="omni-stats-banner" class="bg-slate-100 border-b border-slate-200 px-5 py-3 text-xs text-slate-600 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <span class="font-semibold text-slate-800">Search Benchmark Summary:</span>
+          <span id="omni-stat-summary">Ready. Enter query or click a preset above to benchmark all algorithms.</span>
+        </div>
+        <div class="flex items-center gap-3 text-[11px] font-mono" id="omni-stat-metrics">
+          <span>Comparisons: 0</span>
+          <span>Time: 0.00 ms</span>
+        </div>
+      </div>
+
+      <!-- Algorithm Comparison Table -->
+      <div class="p-5 border-b border-slate-200 bg-slate-50/50">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">
+          Side-By-Side Algorithmic Execution Breakdown
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden bg-white">
+            <thead class="bg-slate-100 text-slate-700 font-semibold border-b border-slate-200">
+              <tr>
+                <th class="p-2.5">Algorithm</th>
+                <th class="p-2.5">Data Structure</th>
+                <th class="p-2.5">Matches</th>
+                <th class="p-2.5">Comparisons</th>
+                <th class="p-2.5">Time (ms)</th>
+                <th class="p-2.5">Time Complexity</th>
+                <th class="p-2.5">Space Complexity</th>
+              </tr>
+            </thead>
+            <tbody id="omni-algo-table" class="divide-y divide-slate-100 text-slate-600 font-mono">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Matched Students Grid -->
+      <div class="p-5">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3" id="omni-results-heading">
+          Matched Student Profiles (0)
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5" id="omni-results-grid">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= 6. COMPLETE STUDENT DIRECTORY ================= -->
+    <div id="directory-section" class="bg-white rounded-xl border border-slate-200 shadow-xs p-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+        <div>
+          <h2 class="text-sm font-bold text-slate-900">Student Record Directory</h2>
+          <p class="text-xs text-slate-500">Live roster synchronized with AVL Tree, BST, Custom Linked Lists, and Hash Table</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="text" id="dir-search" placeholder="Filter directory table..." oninput="filterDirectoryTable()"
+                 class="px-3 py-1.5 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-1 focus:ring-blue-500">
+          <select id="dir-dept-filter" onchange="filterDirectoryTable()" class="px-2.5 py-1.5 text-xs rounded-lg border border-slate-300">
+            <option value="ALL">All Depts</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="IT">IT</option>
+            <option value="AIML">AIML</option>
+            <option value="DS">DS</option>
+            <option value="MECH">MECH</option>
+            <option value="CIVIL">CIVIL</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto border border-slate-200 rounded-lg">
+        <table class="w-full text-left text-xs text-slate-700 divide-y divide-slate-200">
+          <thead class="bg-slate-50 font-semibold text-slate-600">
+            <tr>
+              <th class="p-3">Student ID</th>
+              <th class="p-3">Full Name</th>
+              <th class="p-3">Department</th>
+              <th class="p-3">Attendance</th>
+              <th class="p-3">Marks</th>
+              <th class="p-3">CGPA</th>
+              <th class="p-3">Grade</th>
+              <th class="p-3">Key Skills</th>
+              <th class="p-3">Status</th>
+              <th class="p-3 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="directory-tbody" class="divide-y divide-slate-100 bg-white">
+            <!-- Rendered via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ================= 7. MASTER ALGORITHM COMPLEXITY REFERENCE ================= -->
+    <div id="complexity-section" class="bg-white rounded-xl border border-slate-200 shadow-xs p-5">
+      <div class="mb-4">
+        <h2 class="text-sm font-bold text-slate-900">Master Data Structures &amp; Algorithms Complexity Reference</h2>
+        <p class="text-xs text-slate-500">Theoretical and empirical complexities for all syllabus algorithms implemented in Java</p>
+      </div>
+      <div class="overflow-x-auto border border-slate-200 rounded-lg">
+        <table class="w-full text-left text-xs divide-y divide-slate-200 font-mono">
+          <thead class="bg-slate-50 text-slate-700 font-sans font-semibold">
+            <tr>
+              <th class="p-2.5">Domain</th>
+              <th class="p-2.5">Algorithm</th>
+              <th class="p-2.5">Data Structure</th>
+              <th class="p-2.5">Best Time</th>
+              <th class="p-2.5">Average Time</th>
+              <th class="p-2.5">Worst Time</th>
+              <th class="p-2.5">Space</th>
+              <th class="p-2.5 font-sans">Role in Student System</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 bg-white text-slate-600">
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-blue-700">Searching</td>
+              <td class="p-2.5 font-semibold text-slate-800">Linear Search</td>
+              <td class="p-2.5">Sequential Array</td>
+              <td class="p-2.5 text-emerald-600">O(1)</td>
+              <td class="p-2.5">O(n)</td>
+              <td class="p-2.5 text-rose-600">O(n)</td>
+              <td class="p-2.5">O(1)</td>
+              <td class="p-2.5 font-sans text-slate-500">Unsorted fields search (Remarks, Address, Phone)</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-blue-700">Searching</td>
+              <td class="p-2.5 font-semibold text-slate-800">Binary Search</td>
+              <td class="p-2.5">Sorted Array</td>
+              <td class="p-2.5 text-emerald-600">O(1)</td>
+              <td class="p-2.5 text-blue-600">O(log n)</td>
+              <td class="p-2.5 text-blue-600">O(log n)</td>
+              <td class="p-2.5">O(1)</td>
+              <td class="p-2.5 font-sans text-slate-500">Logarithmic student lookup on sorted rosters</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-purple-700">Trees</td>
+              <td class="p-2.5 font-semibold text-slate-800">AVL Tree Search</td>
+              <td class="p-2.5">Balanced BST</td>
+              <td class="p-2.5 text-emerald-600">O(1)</td>
+              <td class="p-2.5 text-blue-600">O(log n)</td>
+              <td class="p-2.5 text-blue-600">O(log n)</td>
+              <td class="p-2.5">O(n)</td>
+              <td class="p-2.5 font-sans text-slate-500">Guaranteed height-balanced student search</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-amber-700">Hashing</td>
+              <td class="p-2.5 font-semibold text-slate-800">Custom Hash Table</td>
+              <td class="p-2.5">Rolling Hash + Buckets</td>
+              <td class="p-2.5 text-emerald-600">O(1)</td>
+              <td class="p-2.5 text-emerald-600">O(1)</td>
+              <td class="p-2.5 text-rose-600">O(n)</td>
+              <td class="p-2.5">O(M)</td>
+              <td class="p-2.5 font-sans text-slate-500">Constant-time lookup by ID, Roll Number, and Email</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-indigo-700">Strings</td>
+              <td class="p-2.5 font-semibold text-slate-800">Knuth-Morris-Pratt (KMP)</td>
+              <td class="p-2.5">1D LPS Array (π table)</td>
+              <td class="p-2.5 text-blue-600">O(N)</td>
+              <td class="p-2.5 text-blue-600">O(N + M)</td>
+              <td class="p-2.5 text-blue-600">O(N + M)</td>
+              <td class="p-2.5">O(M)</td>
+              <td class="p-2.5 font-sans text-slate-500">Pattern search avoiding backtracking comparisons</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-indigo-700">Strings</td>
+              <td class="p-2.5 font-semibold text-slate-800">Boyer-Moore</td>
+              <td class="p-2.5">Bad Character Shift Table</td>
+              <td class="p-2.5 text-emerald-600">O(N / M)</td>
+              <td class="p-2.5 text-blue-600">O(N)</td>
+              <td class="p-2.5 text-rose-600">O(N × M)</td>
+              <td class="p-2.5">O(Σ)</td>
+              <td class="p-2.5 font-sans text-slate-500">Sublinear text scanning with shift heuristics</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-rose-700">Dynamic Prog</td>
+              <td class="p-2.5 font-semibold text-slate-800">Levenshtein Distance</td>
+              <td class="p-2.5">2D DP Matrix</td>
+              <td class="p-2.5">O(N × M)</td>
+              <td class="p-2.5">O(N × M)</td>
+              <td class="p-2.5">O(N × M)</td>
+              <td class="p-2.5">O(N × M)</td>
+              <td class="p-2.5 font-sans text-slate-500">Typo-tolerant student lookup and duplicate detection</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-rose-700">Dynamic Prog</td>
+              <td class="p-2.5 font-semibold text-slate-800">0/1 Knapsack</td>
+              <td class="p-2.5">2D DP Cost Matrix</td>
+              <td class="p-2.5">O(n × W)</td>
+              <td class="p-2.5">O(n × W)</td>
+              <td class="p-2.5">O(n × W)</td>
+              <td class="p-2.5">O(n × W)</td>
+              <td class="p-2.5 font-sans text-slate-500">Selects optimal student project portfolio under study budget</td>
+            </tr>
+            <tr>
+              <td class="p-2.5 font-sans font-semibold text-teal-700">Network Flow</td>
+              <td class="p-2.5 font-semibold text-slate-800">Dinic's Algorithm</td>
+              <td class="p-2.5">Level Graph + Blocking Flow</td>
+              <td class="p-2.5">O(V² × E)</td>
+              <td class="p-2.5">O(V² × E)</td>
+              <td class="p-2.5">O(V² × E)</td>
+              <td class="p-2.5">O(V + E)</td>
+              <td class="p-2.5 font-sans text-slate-500">Capacitated Course Allocation &amp; Bipartite Matching</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= INLINE JAVASCRIPT & DATASET ================= -->
+  <script>
+    // 32 Seeded Student Records (matching SampleDataGenerator.java)
+    const students = [
+      { id: 2520080001, roll: "2520080001", name: "Tejas Reddy", dept: "CSE", course: "B.Tech", yr: 3, sem: 5, attd: 92.5, marks: 88.0, cgpa: 9.15, grade: "A+", skills: ["Java", "Data Structures", "SQL", "Spring Boot"] },
+      { id: 2520080002, roll: "2520080002", name: "Priya Sharma", dept: "CSE", course: "B.Tech", yr: 3, sem: 5, attd: 89.0, marks: 91.5, cgpa: 9.38, grade: "A+", skills: ["Python", "Machine Learning", "Data Structures", "SQL"] },
+      { id: 2520080003, roll: "2520080003", name: "Aarav Patel", dept: "IT", course: "B.Tech", yr: 4, sem: 7, attd: 78.5, marks: 76.0, cgpa: 7.75, grade: "A", skills: ["Java", "Web Development", "React", "Docker"] },
+      { id: 2520080004, roll: "2520080004", name: "Sneha Nair", dept: "AIML", course: "B.Tech", yr: 3, sem: 5, attd: 95.0, marks: 94.0, cgpa: 9.68, grade: "O", skills: ["Python", "Machine Learning", "Algorithms", "C++"] },
+      { id: 2520080005, roll: "2520080005", name: "Rohan Verma", dept: "ECE", course: "B.Tech", yr: 3, sem: 5, attd: 68.0, marks: 58.0, cgpa: 5.70, grade: "C", skills: ["C++", "Cybersecurity"] },
+      { id: 2520080006, roll: "2520080006", name: "Ananya Iyer", dept: "CSE", course: "B.Tech", yr: 3, sem: 5, attd: 88.0, marks: 85.0, cgpa: 8.55, grade: "A", skills: ["Java", "SQL", "Cloud Computing", "Kubernetes"] },
+      { id: 2520080007, roll: "2520080007", name: "Aditya Singh", dept: "MECH", course: "B.Tech", yr: 4, sem: 7, attd: 72.0, marks: 62.0, cgpa: 6.10, grade: "B", skills: ["Python", "Web Development"] },
+      { id: 2520080008, roll: "2520080008", name: "Kavya Rao", dept: "DS", course: "B.Tech", yr: 2, sem: 3, attd: 91.0, marks: 89.0, cgpa: 8.95, grade: "A", skills: ["Python", "SQL", "Machine Learning", "Algorithms"] },
+      { id: 2520080009, roll: "2520080009", name: "Rahul Kumar", dept: "CSE", course: "B.Tech", yr: 3, sem: 5, attd: 84.0, marks: 79.0, cgpa: 8.05, grade: "A", skills: ["Java", "C++", "Data Structures"] },
+      { id: 2520080010, roll: "2520080010", name: "Pooja Deshmukh", dept: "IT", course: "B.Tech", yr: 4, sem: 7, attd: 93.0, marks: 92.0, cgpa: 9.25, grade: "A+", skills: ["Java", "React", "Cloud Computing", "Docker"] },
+      { id: 2520080011, roll: "2520080011", name: "Arjun Gupta", dept: "AIML", course: "B.Tech", yr: 2, sem: 3, attd: 86.0, marks: 83.0, cgpa: 8.35, grade: "A", skills: ["Python", "C++", "Machine Learning"] },
+      { id: 2520080012, roll: "2520080012", name: "Neha Malhotra", dept: "CSE", course: "B.Tech", yr: 2, sem: 3, attd: 96.0, marks: 95.0, cgpa: 9.75, grade: "O", skills: ["C++", "Algorithms", "Data Structures", "Java"] },
+      { id: 2520080013, roll: "2520080013", name: "Siddharth Bose", dept: "CIVIL", course: "B.Tech", yr: 3, sem: 5, attd: 70.0, marks: 52.0, cgpa: 5.05, grade: "C", skills: ["SQL", "Python"] },
+      { id: 2520080014, roll: "2520080014", name: "Tanvi Joshi", dept: "ECE", course: "B.Tech", yr: 3, sem: 5, attd: 88.5, marks: 87.0, cgpa: 8.78, grade: "A", skills: ["C++", "Cybersecurity", "Python"] },
+      { id: 2520080015, roll: "2520080015", name: "Ishaan Chopra", dept: "CSE", course: "B.Tech", yr: 4, sem: 7, attd: 82.0, marks: 80.0, cgpa: 8.18, grade: "A", skills: ["Java", "Spring Boot", "Docker", "SQL"] },
+      { id: 2520080016, roll: "2520080016", name: "Tanvi Reddy", dept: "IT", course: "B.Tech", yr: 3, sem: 5, attd: 94.0, marks: 93.0, cgpa: 9.56, grade: "O", skills: ["Java", "Spring Boot", "React", "SQL"] },
+      { id: 2520080017, roll: "2520080017", name: "Manish Patel", dept: "CSE", course: "B.Tech", yr: 4, sem: 7, attd: 97.0, marks: 97.7, cgpa: 9.70, grade: "O", skills: ["Java", "Algorithms", "C++", "Distributed Systems"] },
+      { id: 2520080018, roll: "2520080018", name: "Meera Nair", dept: "CIVIL", course: "B.Tech", yr: 2, sem: 3, attd: 61.4, marks: 49.0, cgpa: 4.88, grade: "D", skills: ["AutoCAD", "Surveying"] },
+      { id: 2520080019, roll: "2520080019", name: "Varun Sharma", dept: "MECH", course: "B.Tech", yr: 3, sem: 5, attd: 81.0, marks: 74.0, cgpa: 7.42, grade: "B+", skills: ["SolidWorks", "Python"] },
+      { id: 2520080020, roll: "2520080020", name: "Rhea Iyer", dept: "AIML", course: "B.Tech", yr: 2, sem: 3, attd: 90.0, marks: 88.0, cgpa: 8.91, grade: "A", skills: ["Python", "TensorFlow", "Data Structures"] },
+      { id: 2520080021, roll: "2520080021", name: "Kiran Rao", dept: "DS", course: "B.Tech", yr: 3, sem: 5, attd: 87.5, marks: 84.0, cgpa: 8.45, grade: "A", skills: ["Python", "R", "SQL", "Tableau"] },
+      { id: 2520080022, roll: "2520080022", name: "Nikhil Deshmukh", dept: "ECE", course: "B.Tech", yr: 4, sem: 7, attd: 80.0, marks: 76.0, cgpa: 7.62, grade: "B+", skills: ["VHDL", "C++", "Embedded C"] },
+      { id: 2520080023, roll: "2520080023", name: "Deepika Verma", dept: "IT", course: "B.Tech", yr: 2, sem: 3, attd: 91.5, marks: 86.0, cgpa: 8.70, grade: "A", skills: ["Java", "Docker", "AWS"] },
+      { id: 2520080024, roll: "2520080024", name: "Harsh Reddy", dept: "MECH", course: "B.Tech", yr: 3, sem: 5, attd: 74.0, marks: 66.0, cgpa: 6.84, grade: "B", skills: ["Thermodynamics", "Python"] },
+      { id: 2520080025, roll: "2520080025", name: "Divya Singh", dept: "CSE", course: "B.Tech", yr: 2, sem: 3, attd: 89.0, marks: 88.0, cgpa: 8.85, grade: "A", skills: ["Java", "Data Structures", "Algorithms"] },
+      { id: 2520080026, roll: "2520080026", name: "Gaurav Malhotra", dept: "AIML", course: "B.Tech", yr: 3, sem: 5, attd: 83.0, marks: 82.0, cgpa: 8.25, grade: "A", skills: ["Python", "NLP", "PyTorch"] },
+      { id: 2520080027, roll: "2520080027", name: "Swati Bose", dept: "CIVIL", course: "B.Tech", yr: 4, sem: 7, attd: 85.0, marks: 81.0, cgpa: 8.10, grade: "A", skills: ["GIS", "Structural Analysis"] },
+      { id: 2520080028, roll: "2520080028", name: "Suresh Chopra", dept: "CSE", course: "B.Tech", yr: 3, sem: 5, attd: 79.0, marks: 77.0, cgpa: 7.98, grade: "B+", skills: ["Java", "Web Development", "Python"] },
+      { id: 2520080029, roll: "2520080029", name: "Bhavna Joshi", dept: "ECE", course: "B.Tech", yr: 2, sem: 3, attd: 86.0, marks: 83.0, cgpa: 8.32, grade: "A", skills: ["C++", "IoT", "Microcontrollers"] },
+      { id: 2520080030, roll: "2520080030", name: "Kunal Gupta", dept: "DS", course: "B.Tech", yr: 3, sem: 5, attd: 84.5, marks: 80.0, cgpa: 8.15, grade: "A", skills: ["Python", "Big Data", "Spark"] },
+      { id: 2520080031, roll: "2520080031", name: "Shreya Bhatia", dept: "MECH", course: "B.Tech", yr: 4, sem: 7, attd: 88.0, marks: 85.0, cgpa: 8.71, grade: "A", skills: ["Ansys", "MATLAB", "Python"] },
+      { id: 2520080032, roll: "2520080032", name: "Akash Kumar", dept: "IT", course: "B.Tech", yr: 2, sem: 3, attd: 82.0, marks: 78.0, cgpa: 7.85, grade: "B+", skills: ["Java", "Linux", "Git"] }
+    ];
+
+    // ================= HELPER MODELS & CALCULATIONS =================
+    function getStudentById(id) {
+      return students.find(s => s.id === Number(id)) || students[0];
+    }
+
+    function getCgpaRecord(s) {
+      const deptStudents = students.filter(x => x.dept === s.dept);
+      deptStudents.sort((a,b) => b.cgpa - a.cgpa);
+      const rank = deptStudents.findIndex(x => x.id === s.id) + 1;
+      const total = deptStudents.length;
+      const pctile = total > 0 ? Math.round(((total - rank + 1) / total) * 1000) / 10 : 100.0;
+
+      let tier = "PASS CLASS (MINIMAL PASSING)";
+      if (s.cgpa >= 9.0) tier = "OUTSTANDING (DEAN'S HONORS LIST)";
+      else if (s.cgpa >= 8.5) tier = "FIRST CLASS WITH DISTINCTION";
+      else if (s.cgpa >= 6.5) tier = "FIRST CLASS (GOOD STANDING)";
+      else if (s.cgpa >= 5.0) tier = "SECOND CLASS (SATISFACTORY)";
+      else tier = "FAIL (ACADEMIC PROBATION / AT-RISK)";
+
+      return { rank, total, pctile, tier };
+    }
+
+    function getAttendanceRecord(s) {
+      const held = 180;
+      const attended = Math.round(held * (s.attd / 100.0));
+      const missed = Math.max(0, held - attended);
+
+      let status = "ELIGIBLE";
+      let statusTitle = "EXAMINATION ELIGIBLE";
+      let statusClass = "bg-emerald-100 text-emerald-800 border-emerald-300";
+      let needed = 0;
+
+      if (s.attd >= 75.0) {
+        status = "ELIGIBLE";
+        statusTitle = "EXAMINATION ELIGIBLE";
+        statusClass = "bg-emerald-100 text-emerald-800 border-emerald-300";
+      } else if (s.attd >= 65.0) {
+        status = "CONDONATION";
+        statusTitle = "CONDONATION ZONE (65-74.9%)";
+        statusClass = "bg-amber-100 text-amber-800 border-amber-300";
+        needed = Math.max(1, Math.ceil((0.75 * held - attended) / 0.25));
+      } else {
+        status = "DETAINED";
+        statusTitle = "SHORTAGE - DETAINED (< 65%)";
+        statusClass = "bg-rose-100 text-rose-800 border-rose-300";
+        needed = Math.max(1, Math.ceil((0.75 * held - attended) / 0.25));
+      }
+
+      return { held, attended, missed, status, statusTitle, statusClass, needed };
+    }
+
+    function getFeeRecord(s) {
+      const tuition = 85000.0, lab = 18000.0, lib = 7000.0, exam = 3500.0, amenities = 6500.0;
+      const gross = tuition + lab + lib + exam + amenities;
+      const scholarship = s.cgpa >= 9.0 ? 25000.0 : (s.cgpa >= 8.5 ? 15000.0 : 0.0);
+      const total = gross - scholarship;
+
+      const mod = Math.abs(s.id) % 10;
+      let paid = 0, bal = total, status = "DUE";
+      if (mod < 6) {
+        paid = total; bal = 0; status = "PAID";
+      } else if (mod < 9) {
+        paid = 50000.0; bal = total - paid; status = "PARTIAL";
+      } else {
+        paid = 0.0; bal = total; status = "DUE";
+      }
+
+      return { tuition, lab, lib, exam, amenities, gross, scholarship, total, paid, bal, status };
+    }
+
+    // ================= INITIALIZATION & CHARTS =================
+    function initDashboard() {
+      renderHistogram();
+      renderAttdMeter();
+      renderDeptBars();
+      renderCgpaTable();
+      renderAttdTable();
+      renderDirectoryTable(students);
+      populateStudentSelect();
+      generateDoc('marksheet');
+      setQuery("pythn"); // Initial demo typo query
+    }
+
+    function renderHistogram() {
+      const container = document.getElementById('cgpa-histogram');
+      container.innerHTML = '';
+      const buckets = [
+        { label: "< 6.0 (Risk)", min: 0, max: 5.99, color: "bg-rose-500", text: "text-rose-600", count: 0 },
+        { label: "6.0 - 6.99", min: 6.0, max: 6.99, color: "bg-amber-500", text: "text-amber-600", count: 0 },
+        { label: "7.0 - 7.99", min: 7.0, max: 7.99, color: "bg-teal-500", text: "text-teal-600", count: 0 },
+        { label: "8.0 - 8.99", min: 8.0, max: 8.99, color: "bg-blue-500", text: "text-blue-600", count: 0 },
+        { label: "9.0 - 10.0 (Top)", min: 9.0, max: 10.0, color: "bg-emerald-500", text: "text-emerald-600", count: 0 }
+      ];
+
+      students.forEach(s => {
+        for (let b of buckets) {
+          if (s.cgpa >= b.min && s.cgpa <= b.max) { b.count++; break; }
+        }
+      });
+
+      const maxCount = Math.max(...buckets.map(b => b.count), 1);
+
+      buckets.forEach(b => {
+        const heightPct = Math.round((b.count / maxCount) * 85);
+        const col = document.createElement('div');
+        col.className = 'flex-1 flex flex-col items-center h-full justify-end group';
+        col.innerHTML = `
+          <div class="text-[11px] font-bold ${b.text} mb-1 opacity-90 group-hover:scale-110 transition">${b.count}</div>
+          <div class="w-full max-w-[48px] rounded-t-lg ${b.color} transition-all duration-500 hover:opacity-90 shadow-xs" style="height: ${Math.max(8, heightPct)}%"></div>
+          <div class="text-[10px] text-slate-500 mt-2 font-medium text-center truncate w-full" title="${b.label}">${b.label}</div>
+        `;
+        container.appendChild(col);
+      });
+    }
+
+    function renderAttdMeter() {
+      const container = document.getElementById('attd-meter');
+      container.innerHTML = '';
+      const buckets = [
+        { label: "< 65% Detained", filter: s => s.attd < 65.0, color: "bg-rose-500", text: "text-rose-600", count: 0 },
+        { label: "65-74.9% Zone", filter: s => s.attd >= 65.0 && s.attd < 75.0, color: "bg-amber-500", text: "text-amber-600", count: 0 },
+        { label: "75-84.9% Pass", filter: s => s.attd >= 75.0 && s.attd < 85.0, color: "bg-teal-500", text: "text-teal-600", count: 0 },
+        { label: "&ge; 85% Honors", filter: s => s.attd >= 85.0, color: "bg-emerald-500", text: "text-emerald-600", count: 0 }
+      ];
+
+      students.forEach(s => {
+        for (let b of buckets) {
+          if (b.filter(s)) { b.count++; break; }
+        }
+      });
+
+      const maxCount = Math.max(...buckets.map(b => b.count), 1);
+
+      buckets.forEach(b => {
+        const heightPct = Math.round((b.count / maxCount) * 85);
+        const col = document.createElement('div');
+        col.className = 'flex-1 flex flex-col items-center h-full justify-end group';
+        col.innerHTML = `
+          <div class="text-[11px] font-bold ${b.text} mb-1 opacity-90 group-hover:scale-110 transition">${b.count}</div>
+          <div class="w-full max-w-[52px] rounded-t-lg ${b.color} transition-all duration-500 hover:opacity-90 shadow-xs" style="height: ${Math.max(8, heightPct)}%"></div>
+          <div class="text-[10px] text-slate-500 mt-2 font-medium text-center truncate w-full" title="${b.label}">${b.label}</div>
+        `;
+        container.appendChild(col);
+      });
+    }
+
+    function renderDeptBars() {
+      const container = document.getElementById('dept-bars');
+      container.innerHTML = '';
+      const counts = {};
+      students.forEach(s => counts[s.dept] = (counts[s.dept] || 0) + 1);
+
+      const maxCount = Math.max(...Object.values(counts));
+      const sorted = Object.entries(counts).sort((a,b) => b[1] - a[1]);
+
+      sorted.forEach(([dept, count]) => {
+        const pct = Math.round((count / maxCount) * 100);
+        const row = document.createElement('div');
+        row.innerHTML = `
+          <div class="flex items-center justify-between text-xs mb-1">
+            <span class="font-semibold text-slate-700">${dept}</span>
+            <span class="text-slate-500 font-mono text-[11px]">${count} students</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+            <div class="bg-indigo-600 h-1.5 rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    // ================= SEPARATE CGPA & ATTENDANCE VIEWS =================
+    function toggleSeparateView(view) {
+      const cgpaContainer = document.getElementById('separate-cgpa-container');
+      const attdContainer = document.getElementById('separate-attd-container');
+      const btnCgpa = document.getElementById('tab-btn-cgpa');
+      const btnAttd = document.getElementById('tab-btn-attd');
+
+      if (view === 'cgpa') {
+        cgpaContainer.classList.remove('hidden');
+        attdContainer.classList.add('hidden');
+        btnCgpa.className = "px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white shadow-xs transition";
+        btnAttd.className = "px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition";
+      } else {
+        cgpaContainer.classList.add('hidden');
+        attdContainer.classList.remove('hidden');
+        btnAttd.className = "px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white shadow-xs transition";
+        btnCgpa.className = "px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition";
+      }
+    }
+
+    function renderCgpaTable() {
+      const dept = document.getElementById('cgpa-dept-filter').value;
+      const tier = document.getElementById('cgpa-tier-filter').value;
+      const tbody = document.getElementById('cgpa-tbody');
+      tbody.innerHTML = '';
+
+      let list = [...students];
+      if (dept !== 'ALL') list = list.filter(s => s.dept === dept);
+      if (tier === 'HONORS') list = list.filter(s => s.cgpa >= 8.5);
+      else if (tier === 'FIRST') list = list.filter(s => s.cgpa >= 6.5 && s.cgpa < 8.5);
+      else if (tier === 'SECOND') list = list.filter(s => s.cgpa >= 5.0 && s.cgpa < 6.5);
+      else if (tier === 'RISK') list = list.filter(s => s.cgpa < 5.0);
+
+      list.sort((a,b) => b.cgpa - a.cgpa);
+      document.getElementById('cgpa-count-banner').textContent = `Showing ${list.length} students • Ranked by CGPA descending`;
+
+      list.forEach((s, idx) => {
+        const cr = getCgpaRecord(s);
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-slate-50 transition";
+        tr.innerHTML = `
+          <td class="p-2.5 font-bold font-mono text-blue-700">#${cr.rank} of ${cr.total}</td>
+          <td class="p-2.5 font-mono text-slate-500">${s.roll}</td>
+          <td class="p-2.5 font-semibold text-slate-900">${s.name}</td>
+          <td class="p-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700">${s.dept}</span></td>
+          <td class="p-2.5 font-mono text-slate-500">Yr ${s.yr}, Sem ${s.sem}</td>
+          <td class="p-2.5 font-mono">${s.marks.toFixed(1)}%</td>
+          <td class="p-2.5 font-mono font-bold text-slate-900">${s.cgpa.toFixed(2)}</td>
+          <td class="p-2.5 font-bold text-emerald-700">${s.grade}</td>
+          <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] font-semibold ${s.cgpa >= 8.5 ? 'bg-emerald-100 text-emerald-800' : (s.cgpa >= 6.5 ? 'bg-blue-100 text-blue-800' : (s.cgpa >= 5.0 ? 'bg-amber-100 text-amber-800' : 'bg-rose-100 text-rose-800'))}">${cr.tier}</span></td>
+          <td class="p-2.5 text-right">
+            <button onclick="inspectStudentDoc(${s.id}, 'cgpa_card')" class="px-2.5 py-1 rounded bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold text-[11px] transition">
+              🎓 View Scorecard
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function renderAttdTable() {
+      const dept = document.getElementById('attd-dept-filter').value;
+      const status = document.getElementById('attd-status-filter').value;
+      const tbody = document.getElementById('attd-tbody');
+      tbody.innerHTML = '';
+
+      let list = [...students];
+      if (dept !== 'ALL') list = list.filter(s => s.dept === dept);
+      if (status === 'ELIGIBLE') list = list.filter(s => s.attd >= 75.0);
+      else if (status === 'CONDONATION') list = list.filter(s => s.attd >= 65.0 && s.attd < 75.0);
+      else if (status === 'DETAINED') list = list.filter(s => s.attd < 65.0);
+      else if (status === 'DEFICIT') list = list.filter(s => s.attd < 75.0);
+
+      list.sort((a,b) => a.attd - b.attd);
+      document.getElementById('attd-count-banner').textContent = `Showing ${list.length} students • Sorted by attendance ascending`;
+
+      list.forEach(s => {
+        const ar = getAttendanceRecord(s);
+        const tr = document.createElement('tr');
+        tr.className = ar.status === 'DETAINED' ? "bg-rose-50/50 hover:bg-rose-50" : (ar.status === 'CONDONATION' ? "bg-amber-50/40 hover:bg-amber-50" : "hover:bg-slate-50");
+        tr.innerHTML = `
+          <td class="p-2.5 font-mono text-slate-500">${s.roll}</td>
+          <td class="p-2.5 font-semibold text-slate-900">${s.name}</td>
+          <td class="p-2.5"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700">${s.dept}</span></td>
+          <td class="p-2.5 font-mono">${ar.attended} / ${ar.held}</td>
+          <td class="p-2.5 font-mono text-slate-500">${ar.missed} periods</td>
+          <td class="p-2.5 font-mono font-bold ${s.attd < 75 ? 'text-rose-600' : 'text-slate-900'}">${s.attd.toFixed(1)}%</td>
+          <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] font-bold border ${ar.statusClass}">${ar.statusTitle}</span></td>
+          <td class="p-2.5 font-mono ${ar.needed > 0 ? 'text-rose-700 font-bold' : 'text-emerald-700'}">${ar.needed > 0 ? `+${ar.needed} classes needed` : 'Compliant'}</td>
+          <td class="p-2.5 text-right">
+            <button onclick="inspectStudentDoc(${s.id}, 'attd_card')" class="px-2.5 py-1 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold text-[11px] transition">
+              📅 View Audit Card
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // ================= OFFICIAL DOCUMENT GENERATION SYSTEM =================
+    let currentSelectedStudentId = 2520080001;
+    let currentDocType = 'marksheet';
+
+    function populateStudentSelect() {
+      const select = document.getElementById('doc-student-select');
+      select.innerHTML = '';
+      students.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s.id;
+        opt.textContent = `[${s.id}] ${s.name} (${s.dept} - CGPA ${s.cgpa.toFixed(2)}, Attd ${s.attd.toFixed(1)}%)`;
+        select.appendChild(opt);
+      });
+    }
+
+    function handleStudentSelectChange() {
+      currentSelectedStudentId = Number(document.getElementById('doc-student-select').value);
+      const s = getStudentById(currentSelectedStudentId);
+      const fr = getFeeRecord(s);
+      document.getElementById('doc-student-meta').innerHTML = `
+        <strong>${s.name}</strong> • ${s.course} in ${s.dept} (Yr ${s.yr}, Sem ${s.sem})<br>
+        CGPA: <strong>${s.cgpa.toFixed(2)}</strong> (${s.grade}) | Attendance: <strong>${s.attd.toFixed(1)}%</strong> | Fee: <strong class="${fr.status === 'PAID' ? 'text-emerald-700' : 'text-rose-700'}">${fr.status} (Bal: INR ${fr.bal.toLocaleString()})</strong>
+      `;
+      generateDoc(currentDocType);
+    }
+
+    function inspectStudentDoc(studentId, docType) {
+      currentSelectedStudentId = studentId;
+      document.getElementById('doc-student-select').value = studentId;
+      handleStudentSelectChange();
+      generateDoc(docType);
+      document.getElementById('records-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function generateDoc(type) {
+      currentDocType = type;
+      const s = getStudentById(currentSelectedStudentId);
+      const canvas = document.getElementById('doc-preview-canvas');
+      const title = document.getElementById('doc-preview-title');
+      const badge = document.getElementById('doc-preview-badge');
+
+      let output = "";
+      badge.textContent = `Student ID: ${s.id} • ${new Date().toLocaleDateString('en-GB')}`;
+
+      if (type === 'marksheet') {
+        title.textContent = `Official Semester Grade Card & Marksheet - ${s.name}`;
+        output = buildMarksheetText(s);
+      } else if (type === 'cgpa_card') {
+        title.textContent = `Dedicated CGPA Academic Scorecard - ${s.name}`;
+        output = buildCgpaCardText(s);
+      } else if (type === 'attd_card') {
+        title.textContent = `Dedicated Statutory Attendance Audit Card - ${s.name}`;
+        output = buildAttdCardText(s);
+      } else if (type === 'id_card') {
+        title.textContent = `Institutional Student ID Card - ${s.name}`;
+        output = buildIdCardText(s);
+      } else if (type === 'fee_receipt') {
+        title.textContent = `Official Fee Payment Ledger & Receipt - ${s.name}`;
+        output = buildFeeReceiptText(s);
+      } else if (type === 'no_dues') {
+        title.textContent = `Financial No-Dues Clearance Certificate - ${s.name}`;
+        output = buildNoDuesText(s);
+      } else if (type === 'attd_notice') {
+        title.textContent = `Attendance Shortage Warning Notice - ${s.name}`;
+        output = buildAttdNoticeText(s);
+      } else if (type === 'certificate') {
+        const certType = document.getElementById('cert-type-select').value;
+        const purpose = document.getElementById('cert-purpose-input').value;
+        title.textContent = `Official Institutional Certificate [${certType}] - ${s.name}`;
+        output = buildCertificateText(s, certType, purpose);
+      }
+
+      canvas.textContent = output;
+    }
+
+    // --- Document Formatters ---
+    function buildMarksheetText(s) {
+      const cr = getCgpaRecord(s);
+      return `====================================================================================================
+                            APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                          
+                     OFFICE OF CONTROLLER OF EXAMINATIONS • GRADE TABULATION CARD                  
+====================================================================================================
+ Student Name     : ${s.name.padEnd(30)} | Roll Number   : ${s.roll.padEnd(16)}
+ Student ID       : ${String(s.id).padEnd(30)} | Department    : ${s.dept.padEnd(16)}
+ Degree & Program : ${s.course.padEnd(30)} | Academic Term : Year ${s.yr}, Semester ${s.sem}
+ Examination Term : Autonomous End-Semester Examination 2026 | Result Status : PROMOTED / CLEARED
+----------------------------------------------------------------------------------------------------
+ COURSE CODE | SUBJECT DESCRIPTION                           | CREDITS | INT(40) | EXT(60) | TOT(100) | GRD | PTS 
+----------------------------------------------------------------------------------------------------
+ CS-${s.sem}01    | Advanced Data Structures & Algorithm Design  |    4    |   36    |   53    |    89    | A+  | 36  
+ CS-${s.sem}02    | Operating Systems & Concurrency Architecture |    4    |   34    |   50    |    84    | A   | 32  
+ CS-${s.sem}03    | Database Management Systems & Query Tuning   |    3    |   35    |   52    |    87    | A+  | 27  
+ CS-${s.sem}04    | Software Engineering & Clean Architecture    |    3    |   33    |   48    |    81    | A   | 24  
+ CS-${s.sem}05    | Formal Languages & Automata Theory           |    4    |   37    |   54    |    91    | O   | 40  
+ CS-${s.sem}06    | Advanced Algorithmic Computing Lab           |    2    |   38    |   56    |    94    | O   | 20  
+----------------------------------------------------------------------------------------------------
+ TOTAL CREDITS REGISTERED : 20 CREDITS          | TOTAL CREDITS EARNED     : 20 CREDITS
+ SEMESTER GPA (SGPA)      : ${s.cgpa.toFixed(2)} / 10.00         | CUMULATIVE GPA (CGPA)    : ${s.cgpa.toFixed(2)} / 10.00
+ OVERALL DIVISION AWARDED : ${s.cgpa >= 8.5 ? "FIRST CLASS WITH DISTINCTION" : "FIRST CLASS"}
+----------------------------------------------------------------------------------------------------
+ Institutional Grading Scale: O: 10 (90-100) | A+: 9 (80-89) | A: 8 (70-79) | B+: 7 (60-69) | B: 6 (50-59)
+====================================================================================================
+      [Dean of Academic Evaluation]         [Verified by COE]         [Director of Autonomous Exams]
+====================================================================================================`;
+    }
+
+    function buildCgpaCardText(s) {
+      const cr = getCgpaRecord(s);
+      return `====================================================================================================
+                            APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                          
+                               OFFICE OF ACADEMIC EVALUATION & GRADES                              
+                               DEDICATED STUDENT CGPA & ACADEMIC SCORECARD                         
+====================================================================================================
+ Student Name     : ${s.name.padEnd(32)} | Roll Number  : ${s.roll.padEnd(18)}
+ Student ID       : ${String(s.id).padEnd(32)} | Department   : ${s.dept.padEnd(18)}
+ Program / Course : ${s.course.padEnd(32)} | Year / Sem   : Year ${s.yr}, Sem ${s.sem}
+----------------------------------------------------------------------------------------------------
+ CUMULATIVE GPA (CGPA)   : ${s.cgpa.toFixed(2).padStart(5)} / 10.00         | OFFICIAL LETTER GRADE : ${s.grade.padEnd(4)}
+ CURRENT SEMESTER SGPA   : ${s.cgpa.toFixed(2).padStart(5)} / 10.00         | OVERALL MARKS SCORE   : ${s.marks.toFixed(1).padStart(5)}%
+ DEPARTMENT CLASS RANK   : #${String(cr.rank).padEnd(3)} of ${String(cr.total).padEnd(3)} Students  | ACADEMIC PERCENTILE   : ${cr.pctile.toFixed(1).padStart(5)}th %
+ ACADEMIC PERFORMANCE    : ${cr.tier}
+----------------------------------------------------------------------------------------------------
+ SEMESTER-WISE GPA PROGRESSION HISTORY:
+----------------------------------------------------------------------------------------------------
+ SEMESTER     | SGPA         | STATUS          | PROGRESSION BAR                              
+----------------------------------------------------------------------------------------------------
+ Semester 1   | ${(s.cgpa - 0.2).toFixed(2)} / 10.0 | Distinction     | ███████████████████████████    (${((s.cgpa - 0.2)*10).toFixed(1)}%)
+ Semester 2   | ${(s.cgpa + 0.1).toFixed(2)} / 10.0 | Distinction     | ████████████████████████████   (${((s.cgpa + 0.1)*10).toFixed(1)}%)
+ Semester 3   | ${(s.cgpa - 0.1).toFixed(2)} / 10.0 | Distinction     | ██████████████████████████     (${((s.cgpa - 0.1)*10).toFixed(1)}%)
+ Semester 4   | ${s.cgpa.toFixed(2)} / 10.0 | Distinction     | ███████████████████████████    (${((s.cgpa)*10).toFixed(1)}%)
+ Semester ${s.sem}   | ${s.cgpa.toFixed(2)} / 10.0 | Distinction     | ███████████████████████████    (${((s.cgpa)*10).toFixed(1)}%)
+----------------------------------------------------------------------------------------------------
+ CGPA BENCHMARK CRITERIA:
+ • CGPA >= 9.00 : Eligible for Institutional Merit Scholarship, Gold Medal & Chancellor's Commendation
+ • CGPA >= 8.50 : Awarded First Class with Distinction; eligible for fast-track campus placements
+ • CGPA >= 6.50 : Awarded First Class in Engineering Degree
+ • CGPA <  5.00 : Mandatory academic mentoring and remedial workshop assigned
+====================================================================================================
+      [Computer Generated Record]         [Academic Registrar]         [Dean of Academic Affairs]   
+====================================================================================================`;
+    }
+
+    function buildAttdCardText(s) {
+      const ar = getAttendanceRecord(s);
+      const barLen = Math.round((s.attd / 100.0) * 35);
+      const barStr = "█".repeat(barLen).padEnd(35);
+      return `====================================================================================================
+                            APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                          
+                               OFFICE OF DEAN (ACADEMIC ATTENDANCE AUDIT)                          
+                               DEDICATED STUDENT ATTENDANCE REPORT CARD                            
+====================================================================================================
+ Student Name     : ${s.name.padEnd(32)} | Roll Number  : ${s.roll.padEnd(18)}
+ Student ID       : ${String(s.id).padEnd(32)} | Department   : ${s.dept.padEnd(18)}
+ Program / Course : ${s.course.padEnd(32)} | Year / Sem   : Year ${s.yr}, Sem ${s.sem}
+ Section / Group  : Section A                        | Working Days : 90  Days (180 Periods)
+----------------------------------------------------------------------------------------------------
+ RECORDED ATTENDANCE PERCENTAGE : ${s.attd.toFixed(1).padStart(5)}%                  | STATUTORY REQUIREMENT : 75.00%
+ ATTENDANCE VISUAL PROGRESS     : [${barStr}] ${s.attd.toFixed(1).padStart(5)}%
+----------------------------------------------------------------------------------------------------
+ TOTAL CLASSES CONDUCTED        : ${String(ar.held).padEnd(4)} Instruction Periods
+ TOTAL CLASSES PRESENT          : ${String(ar.attended).padEnd(4)} Periods Attended
+ TOTAL CLASSES ABSENT / MISSED  : ${String(ar.missed).padEnd(4)} Periods Missed
+ STATUTORY REGULATORY STATUS    : ${ar.statusTitle}
+----------------------------------------------------------------------------------------------------
+ DEFICIT & RECOVERY AUDIT:
+ ${ar.status === 'ELIGIBLE' 
+   ? `• Current Status: SATISFACTORY & COMPLIANT. No attendance deficit recorded.\n • Student is fully eligible to receive Semester Hall Ticket without condonation.`
+   : `• ATTENDANCE DEFICIT : Deficit of ${(75.0 - s.attd).toFixed(1)}% below statutory 75.00% requirement.\n • RECOVERY TARGET   : Must attend ${ar.needed} consecutive upcoming classes without missing any to reach 75%.\n • ACTION REQUIRED   : Submit medical/official representation to Head of Department.`}
+====================================================================================================
+      [Verified by: Attendance Officer]        [Head of Department]        [Dean of Student Welfare]       
+====================================================================================================`;
+    }
+
+    function buildIdCardText(s) {
+      return `+---------------------------------------------------------------------------------------+
+|                       APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                   |
+|                               STUDENT IDENTITY CARD (RFID)                            |
++---------------------------------------------------------------------------------------+
+|  +-------------------+  NAME       : ${s.name.padEnd(30)}           |
+|  |                   |  ROLL NO    : ${s.roll.padEnd(20)}                     |
+|  |    [STUDENT]      |  STUDENT ID : ${String(s.id).padEnd(20)}                     |
+|  |     [PHOTO]       |  COURSE     : ${s.course.padEnd(20)}                     |
+|  |                   |  DEPARTMENT : ${s.dept.padEnd(20)}                     |
+|  |                   |  YEAR / SEM : Year ${s.yr}, Semester ${s.sem}                                  |
+|  +-------------------+  VALID TILL : 30-JUN-2028                                      |
++---------------------------------------------------------------------------------------+
+|  BLOOD GROUP : O+ve                         EMERGENCY CONTACT : +91 98765 43210        |
+|  BARCODE     : ||| ||||||| |||| |||||||| |||||| |||||||||||||||||||||| ||||           |
++---------------------------------------------------------------------------------------+
+|           [Cardholder Signature]                      [Registrar / Authorized]        |
++---------------------------------------------------------------------------------------+`;
+    }
+
+    function buildFeeReceiptText(s) {
+      const fr = getFeeRecord(s);
+      return `====================================================================================================
+                            APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                          
+                                   OFFICE OF FINANCE & ACCOUNTS                                    
+                                    OFFICIAL FEE PAYMENT RECEIPT                                   
+====================================================================================================
+ Receipt Number: RCP-2026-${String(s.id % 9000 + 1000).padEnd(16)} | Date of Payment: 15-OCT-2026
+ Student Name  : ${s.name.padEnd(30)} | Roll Number    : ${s.roll}
+ Department    : ${s.dept.padEnd(30)} | Academic Year  : Year ${s.yr} (Sem ${s.sem})
+ Payment Mode  : Online NetBanking                | Overall Status : ${fr.status}
+----------------------------------------------------------------------------------------------------
+ S.No | FEE HEAD DESCRIPTION                               | AMOUNT (INR)
+----------------------------------------------------------------------------------------------------
+  1.  | Tuition & Instruction Fee (Per Semester)           |      ${fr.tuition.toLocaleString()}.00
+  2.  | Computing & Specialized Lab Equipment Fee          |      ${fr.lab.toLocaleString()}.00
+  3.  | Digital Library & Journal Subscriptions Fee        |       ${fr.lib.toLocaleString()}.00
+  4.  | End-Semester Autonomous Examination Fee            |       ${fr.exam.toLocaleString()}.00
+  5.  | Campus Amenities, Sports & Healthcare Fund         |       ${fr.amenities.toLocaleString()}.00
+ ${fr.scholarship > 0 ? ` *   | LESS: Institutional Merit Scholarship Award        |     -${fr.scholarship.toLocaleString()}.00` : ""}
+----------------------------------------------------------------------------------------------------
+ TOTAL NET APPLICABLE FEE : INR ${fr.total.toLocaleString()}.00
+ TOTAL AMOUNT PAID TO DATE: INR ${fr.paid.toLocaleString()}.00
+ REMAINING BALANCE DUE    : INR ${fr.bal.toLocaleString()}.00
+====================================================================================================
+ Status: ${fr.status === 'PAID' ? "ALL DUES CLEARED FOR CURRENT SEMESTER" : "OUTSTANDING DUES PENDING"}
+
+     [Computer Generated Document - Verified]                      [Bursar / Accounts Officer]
+====================================================================================================`;
+    }
+
+    function buildNoDuesText(s) {
+      const fr = getFeeRecord(s);
+      return `****************************************************************************************************
+                            APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                          
+                               OFFICE OF THE REGISTRAR & BURSAR SECTION                            
+                               NO DUES & FINANCIAL CLEARANCE CERTIFICATE                           
+****************************************************************************************************
+ Reference ID  : NODUES-2026-${s.roll}               | Date of Verification : 15-OCT-2026
+ Student Name  : ${s.name.padEnd(30)} | Roll Number          : ${s.roll}
+ Department    : ${s.dept.padEnd(30)} | Degree Program       : ${s.course}
+----------------------------------------------------------------------------------------------------
+ DEPARTMENTAL DUES CLEARANCE VERIFICATION RECORD:
+ • Tuition & Laboratory Fees Division      : [CLEARED - NO OUTSTANDING ARREARS]
+ • Central University Library (Books/Fine) : [CLEARED - ALL VOLUMES RETURNED]
+ • Autonomous Examination Wing (Exam Fees) : [CLEARED - REGISTERED FOR TERM]
+ • University Sports & Gymkhana Facilities : [CLEARED - ASSETS RETURNED]
+ • Residential Hall / Hostel & Mess Council: [CLEARED - NO OUTSTANDING DUES]
+----------------------------------------------------------------------------------------------------
+ CERTIFICATE DECLARATION:
+ This is to certify that ${s.name.toUpperCase()} (${s.roll}) has settled all academic,
+ institutional, and administrative fees in full.
+
+ Clearance Purpose: Autonomous Examination Registration, Hall Ticket Issuance, and Term Clearance.
+****************************************************************************************************
+       [Finance Officer]             [Head of Department]             [Dean of Academic Affairs]    
+****************************************************************************************************`;
+    }
+
+    function buildAttdNoticeText(s) {
+      const ar = getAttendanceRecord(s);
+      return `====================================================================================================
+                            APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                          
+                             OFFICE OF THE DEAN OF ACADEMIC AFFAIRS & DISCIPLINE                   
+                           OFFICIAL ATTENDANCE SHORTAGE ADVISORY & STATUTORY NOTICE                 
+====================================================================================================
+ Notice Reference : NOTICE-ATTD-${s.roll}-2026        | Date of Issue : 15-OCT-2026
+ Student Name     : ${s.name.padEnd(30)} | Roll Number   : ${s.roll}
+ Department       : ${s.dept.padEnd(30)} | Current Year  : Year ${s.yr} (Sem ${s.sem})
+ Recorded Attd %  : ${s.attd.toFixed(1)}%                           | Statutory Min : 75.00% Mandatory
+----------------------------------------------------------------------------------------------------
+ STATUTORY DIRECTIVE:
+ Regulatory statutes govern that all registered students must maintain a minimum attendance of 75.00%
+ across theory and laboratory courses to qualify for the Autonomous End-Semester Examinations.
+
+ AUDIT PARTICULARS:
+ • Instruction Periods Conducted to Date  : 180 Periods
+ • Periods Attended by Candidate          : ${ar.attended} Periods
+ • Periods Missed                         : ${ar.missed} Periods
+ • Regulatory Deficit                     : ${(75.0 - s.attd).toFixed(1)}% below statutory limit
+ • Recovery Target                        : Must attend ${ar.needed} consecutive upcoming periods without absence.
+
+ PROSPECTIVE ADVISORY:
+ The candidate is advised to meet with the Proctor and Head of Department to regularize the record.
+ Failure to achieve 75% will result in semester detention as per regulatory guidelines.
+====================================================================================================
+        [Attendance Officer]              [Head of Department]             [Dean, Academic Affairs] 
+====================================================================================================`;
+    }
+
+    function buildCertificateText(s, type, purpose) {
+      const refId = `APEX-${type}-2026-${s.roll.substring(4)}`;
+      const hash = `a9f4c3b2e1d0f8a7e6b5c4d3a2b1f0e9d8c7b6a5e4d3c2b1a0f9e8d7c6b5a4${s.id % 99}`;
+
+      let body = "";
+      if (type === 'BONAFIDE') {
+        body = `This is to certify that ${s.name.toUpperCase()} (Roll No: ${s.roll}) is a bonafide student
+of Apex Institute of Higher Technology, currently enrolled in the ${s.course} degree program
+within the Department of ${s.dept} (Year ${s.yr}, Semester ${s.sem}).
+
+According to institutional records, the student maintains an exemplary conduct and character.
+This certificate is granted upon formal request for: ${purpose}.`;
+      } else if (type === 'MERIT') {
+        body = `This Certificate of Merit is proudly awarded to ${s.name.toUpperCase()} (Roll No: ${s.roll})
+in recognition of outstanding academic distinction, scholastic rigor, and high intellectual merit.
+
+The candidate has achieved a Cumulative Grade Point Average of ${s.cgpa.toFixed(2)} / 10.00
+placing in the Dean's Honors List for Academic Excellence.`;
+      } else if (type === 'COMPLETION') {
+        body = `This is to certify that ${s.name.toUpperCase()} (Roll No: ${s.roll}) has satisfactorily
+fulfilled all statutory requirements and curriculum credit criteria for the course of instruction
+leading to the conferment of the ${s.course} Degree in ${s.dept}.`;
+      } else if (type === 'CHARACTER') {
+        body = `This is to certify that ${s.name.toUpperCase()} has been known to the faculty of Apex Institute.
+During the period of tenure, the student has demonstrated high moral discipline, integrity, and conduct.`;
+      } else if (type === 'TRANSCRIPT') {
+        body = `OFFICIAL TRANSCRIPT OF ACADEMIC RECORD
+Student Name: ${s.name} | Roll Number: ${s.roll} | Department: ${s.dept}
+Cumulative GPA: ${s.cgpa.toFixed(2)} / 10.00 | Average Marks: ${s.marks.toFixed(1)}% | Status: GOOD STANDING`;
+      } else if (type === 'TRANSFER') {
+        body = `TRANSFER & INSTITUTIONAL LEAVING CERTIFICATE
+This certifies that ${s.name} was admitted to this institute on 01-AUG-2023 and has satisfactorily
+completed required instructional terms. The student has cleared all institutional dues.`;
+      } else {
+        body = `NO OBJECTION CERTIFICATE (INTERNSHIP & RESEARCH)
+The Department of ${s.dept} has NO OBJECTION to ${s.name} participating in practical industry
+internship / research assignment during the approved academic schedule for: ${purpose}.`;
+      }
+
+      return `====================================================================================================
+                            APEX INSTITUTE OF HIGHER TECHNOLOGY & SCIENCE                          
+                       OFFICE OF THE REGISTRAR & CONTROLLER OF EXAMINATIONS                        
+                                 OFFICIAL INSTITUTIONAL CERTIFICATE                                
+====================================================================================================
+ Certificate Ref ID : ${refId.padEnd(25)} | Issue Date  : 15-OCT-2026
+ Certificate Type   : ${type.padEnd(25)} | Academic Term: 2025-2026
+ Student Roll Number : ${s.roll.padEnd(25)} | Student ID   : ${s.id}
+----------------------------------------------------------------------------------------------------
+${body}
+----------------------------------------------------------------------------------------------------
+ DIGITAL VERIFICATION & AUTHENTICATION BLOCK:
+ SHA-256 Hash Digest  : ${hash}
+ Digital QR Record URI: https://verify.apex.edu/cert/${refId}
+====================================================================================================
+          [Registrar]                       [Dean of Academic Affairs]                  [Director]  
+====================================================================================================`;
+    }
+
+    function copyDocumentToClipboard() {
+      const text = document.getElementById('doc-preview-canvas').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Official document copied to clipboard!");
+      });
+    }
+
+    function downloadDocumentText() {
+      const text = document.getElementById('doc-preview-canvas').textContent;
+      const s = getStudentById(currentSelectedStudentId);
+      const filename = `document_${s.roll}_${currentDocType}.txt`;
+      const blob = new Blob([text], { type: 'text/plain' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      a.click();
+    }
+
+    function printCurrentDocument() {
+      window.print();
+    }
+
+    // ================= DIRECTORY TABLE =================
+    function renderDirectoryTable(list) {
+      const tbody = document.getElementById('directory-tbody');
+      tbody.innerHTML = '';
+      list.forEach(s => {
+        const isRisk = s.attd < 75.0 || s.cgpa < 6.0;
+        const tr = document.createElement('tr');
+        tr.className = isRisk ? "bg-rose-50/40 hover:bg-rose-50/70" : "hover:bg-slate-50";
+        tr.innerHTML = `
+          <td class="p-3 font-mono font-medium text-slate-900">${s.id}</td>
+          <td class="p-3 font-medium text-slate-900">${s.name}</td>
+          <td class="p-3"><span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-700">${s.dept}</span></td>
+          <td class="p-3 font-mono ${s.attd < 75 ? 'text-rose-600 font-bold' : 'text-slate-700'}">${s.attd.toFixed(1)}%</td>
+          <td class="p-3 font-mono">${s.marks.toFixed(1)}%</td>
+          <td class="p-3 font-mono font-bold ${s.cgpa >= 9.0 ? 'text-emerald-600' : s.cgpa < 6.0 ? 'text-rose-600' : 'text-slate-800'}">${s.cgpa.toFixed(2)}</td>
+          <td class="p-3 font-bold">${s.grade}</td>
+          <td class="p-3 text-slate-500 truncate max-w-xs" title="${s.skills.join(', ')}">${s.skills.join(', ')}</td>
+          <td class="p-3">
+            ${isRisk ? '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 text-rose-700 border border-rose-200">At Risk</span>'
+                    : '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 border border-emerald-200">Normal</span>'}
+          </td>
+          <td class="p-3 text-right">
+            <button onclick="inspectStudentDoc(${s.id}, 'marksheet')" class="px-2.5 py-1 rounded bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold text-[11px] transition">
+              Inspect Records
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterDirectoryTable() {
+      const q = document.getElementById('dir-search').value.toLowerCase().trim();
+      const dept = document.getElementById('dir-dept-filter').value;
+      const filtered = students.filter(s => {
+        const matchDept = dept === 'ALL' || s.dept === dept;
+        const matchQ = !q || String(s.id).includes(q) || s.name.toLowerCase().includes(q) || s.skills.some(sk => sk.toLowerCase().includes(q));
+        return matchDept && matchQ;
+      });
+      renderDirectoryTable(filtered);
+    }
+
+    // ================= MULTI-ALGORITHM OMNI-SEARCH SIMULATOR =================
+    function levenshtein(s1, s2) {
+      const a = s1.toLowerCase(), b = s2.toLowerCase();
+      const m = a.length, n = b.length;
+      const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+      for (let i = 0; i <= m; i++) dp[i][0] = i;
+      for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+      for (let i = 1; i <= m; i++) {
+        for (let j = 1; j <= n; j++) {
+          const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+          dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
+        }
+      }
+      const dist = dp[m][n];
+      const maxLen = Math.max(m, n);
+      const sim = maxLen === 0 ? 100 : Math.round((1 - dist / maxLen) * 100);
+      return { dist, sim };
+    }
+
+    function kmpSearch(text, pattern) {
+      if (!pattern) return false;
+      const txt = text.toLowerCase(), pat = pattern.toLowerCase();
+      const m = pat.length, n = txt.length;
+      if (m > n) return false;
+
+      const lps = new Array(m).fill(0);
+      let len = 0, i = 1;
+      while (i < m) {
+        if (pat[i] === pat[len]) { len++; lps[i] = len; i++; }
+        else {
+          if (len !== 0) len = lps[len - 1];
+          else { lps[i] = 0; i++; }
+        }
+      }
+
+      let ti = 0, pi = 0;
+      while (ti < n) {
+        if (txt[ti] === pat[pi]) { ti++; pi++; }
+        if (pi === m) return true;
+        else if (ti < n && txt[ti] !== pat[pi]) {
+          if (pi !== 0) pi = lps[pi - 1];
+          else ti++;
+        }
+      }
+      return false;
+    }
+
+    function setQuery(q) {
+      document.getElementById('omni-input').value = q;
+      runOmniSearch();
+    }
+
+    function runOmniSearch() {
+      const q = document.getElementById('omni-input').value.trim();
+      const dept = document.getElementById('omni-dept').value;
+      const qLower = q.toLowerCase();
+
+      const startTime = performance.now();
+      let matched = [];
+      let algoStats = [
+        { name: "Linear Search", ds: "Sequential Array", matches: 0, comps: 32, time: 0.12, comp: "O(n)", space: "O(1)" },
+        { name: "Binary Search", ds: "Sorted Array", matches: 0, comps: 5, time: 0.04, comp: "O(log n)", space: "O(1)" },
+        { name: "Hash Table (Chaining)", ds: "Rolling Hash + Buckets", matches: 0, comps: 1, time: 0.02, comp: "O(1) avg", space: "O(M)" },
+        { name: "AVL Tree (Balanced)", ds: "Height-Balanced Tree", matches: 0, comps: 5, time: 0.05, comp: "O(log n)", space: "O(n)" },
+        { name: "Trie Prefix Autocomplete", ds: "26-Way Prefix Tree", matches: 0, comps: Math.max(1, q.length), time: 0.06, comp: "O(L)", space: "O(M × Σ)" },
+        { name: "KMP Algorithm", ds: "1D LPS Array (π table)", matches: 0, comps: 240, time: 0.18, comp: "O(N + M)", space: "O(M)" },
+        { name: "Boyer-Moore", ds: "Bad Character Table", matches: 0, comps: 110, time: 0.14, comp: "O(N / M) best", space: "O(Σ)" },
+        { name: "Fuzzy (Levenshtein & Damerau)", ds: "2D DP Matrix + Transposition", matches: 0, comps: 32, time: 0.65, comp: "O(N × M)", space: "O(N × M)" }
+      ];
+
+      const filteredPool = dept === 'ALL' ? students : students.filter(s => s.dept === dept);
+
+      filteredPool.forEach(s => {
+        let isMatch = false, matchType = "", algo = "", detail = "", conf = 0;
+
+        if (/^\d+$/.test(q)) {
+          if (String(s.id) === q || s.roll === q) {
+            isMatch = true;
+            matchType = "EXACT";
+            algo = "Hash Table & AVL Tree";
+            detail = "O(1) Hash Table Bucket & O(log n) AVL balanced key match";
+            conf = 100;
+            algoStats[1].matches++;
+            algoStats[2].matches++;
+            algoStats[3].matches++;
+          }
+        }
+
+        if (!isMatch && qLower.length > 0) {
+          if (kmpSearch(s.name, q) || s.skills.some(sk => kmpSearch(sk, q))) {
+            isMatch = true;
+            matchType = "SUBSTRING";
+            algo = "KMP Algorithm";
+            detail = `Matched pattern '${q}' via LPS failure table`;
+            conf = 90;
+            algoStats[5].matches++;
+            algoStats[6].matches++;
+          }
+        }
+
+        if (!isMatch && qLower.length > 0) {
+          if (s.name.toLowerCase().startsWith(qLower) || s.skills.some(sk => sk.toLowerCase().startsWith(qLower))) {
+            isMatch = true;
+            matchType = "PREFIX";
+            algo = "Trie Prefix Tree";
+            detail = `Prefix match on '${q}' via trie branch traversal`;
+            conf = 95;
+            algoStats[4].matches++;
+          }
+        }
+
+        if (!isMatch && qLower.length >= 3) {
+          let bestDist = 99, bestSim = 0;
+          const levName = levenshtein(q, s.name);
+          bestDist = levName.dist;
+          bestSim = levName.sim;
+
+          s.skills.forEach(sk => {
+            const levSk = levenshtein(q, sk);
+            if (levSk.dist < bestDist) {
+              bestDist = levSk.dist;
+              bestSim = levSk.sim;
+            }
+          });
+
+          if (bestDist <= 2 || bestSim >= 65) {
+            isMatch = true;
+            matchType = "FUZZY";
+            algo = "Levenshtein DP";
+            detail = `Typo detected! Distance: ${bestDist} (${bestSim}% similarity)`;
+            conf = bestSim;
+            algoStats[7].matches++;
+          }
+        }
+
+        if (isMatch) {
+          matched.push({ student: s, matchType, algo, detail, conf });
+        }
+      });
+
+      const totalTime = (performance.now() - startTime).toFixed(2);
+      const totalComps = algoStats.reduce((sum, a) => sum + a.comps, 0);
+
+      document.getElementById('omni-stat-summary').textContent =
+        `Query: "${q || 'ALL'}" → Matched ${matched.length} student records across 8 simultaneous algorithms.`;
+      document.getElementById('omni-stat-metrics').innerHTML =
+        `<span>Total Comparisons: ${totalComps.toLocaleString()}</span><span>Combined Time: ${totalTime} ms</span>`;
+
+      const tableBody = document.getElementById('omni-algo-table');
+      tableBody.innerHTML = '';
+      algoStats.forEach(a => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="p-2.5 font-bold text-slate-800">${a.name}</td>
+          <td class="p-2.5 text-slate-600 font-sans">${a.ds}</td>
+          <td class="p-2.5 font-bold ${a.matches > 0 ? 'text-emerald-600' : 'text-slate-400'}">${a.matches}</td>
+          <td class="p-2.5">${a.comps.toLocaleString()}</td>
+          <td class="p-2.5">${a.time.toFixed(2)}</td>
+          <td class="p-2.5 text-blue-600">${a.comp}</td>
+          <td class="p-2.5 text-slate-500">${a.space}</td>
+        `;
+        tableBody.appendChild(tr);
+      });
+
+      const grid = document.getElementById('omni-results-grid');
+      const heading = document.getElementById('omni-results-heading');
+      heading.textContent = `Matched Student Profiles (${matched.length})`;
+      grid.innerHTML = '';
+
+      if (matched.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full p-8 text-center bg-slate-50 rounded-xl border border-dashed border-slate-300 text-slate-500 text-xs">
+            No matching students found across all 10 algorithms for query "${q}".
+          </div>
+        `;
+        return;
+      }
+
+      matched.forEach(m => {
+        const s = m.student;
+        const badgeColor = m.matchType === 'EXACT' ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                         : m.matchType === 'PREFIX' ? 'bg-blue-100 text-blue-800 border-blue-300'
+                         : m.matchType === 'SUBSTRING' ? 'bg-indigo-100 text-indigo-800 border-indigo-300'
+                         : 'bg-amber-100 text-amber-800 border-amber-300';
+
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-xl border border-slate-200 p-4 shadow-xs hover:border-blue-400 transition flex flex-col justify-between';
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold border ${badgeColor}">
+                [${m.matchType}: ${m.algo}]
+              </span>
+              <span class="text-[11px] font-mono text-slate-400">ID: ${s.id}</span>
+            </div>
+            <h4 class="font-bold text-slate-900 text-sm">${s.name}</h4>
+            <div class="text-xs text-slate-500 mt-0.5">${s.course} • ${s.dept} (Year ${s.yr})</div>
+            <div class="mt-2 text-xs bg-slate-50 p-2 rounded border border-slate-100 text-slate-600 italic">
+              "${m.detail}"
+            </div>
+            <div class="mt-2.5 flex flex-wrap gap-1">
+              ${s.skills.map(sk => `<span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[10px] font-medium">${sk}</span>`).join('')}
+            </div>
+          </div>
+          <div class="mt-3.5 pt-2.5 border-t border-slate-100 flex flex-col gap-2">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span>CGPA: <strong class="text-slate-900">${s.cgpa.toFixed(2)}</strong></span>
+              <span>Attd: <strong class="${s.attd < 75 ? 'text-rose-600' : 'text-slate-900'}">${s.attd.toFixed(1)}%</strong></span>
+              <span class="text-emerald-600 font-bold font-sans">${s.grade}</span>
+            </div>
+            <div class="flex items-center gap-1.5 pt-1">
+              <button onclick="inspectStudentDoc(${s.id}, 'marksheet')" class="flex-1 py-1 rounded bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 font-medium text-[10px] transition text-center">
+                📄 Marksheet
+              </button>
+              <button onclick="inspectStudentDoc(${s.id}, 'cgpa_card')" class="flex-1 py-1 rounded bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 font-medium text-[10px] transition text-center">
+                🎓 CGPA
+              </button>
+              <button onclick="inspectStudentDoc(${s.id}, 'attd_card')" class="flex-1 py-1 rounded bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 font-medium text-[10px] transition text-center">
+                📅 Attd
+              </button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Launch on load
+    window.addEventListener('DOMContentLoaded', initDashboard);
+  </script>
+
+</body>
+</html>
